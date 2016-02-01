@@ -1,20 +1,31 @@
 html, body { background: #f0f0f0; }
 
 .baseview {
-  max-width: 2518px;
+  max-width: 1294px;
   img { max-width: 100%; }
 }
 
 .draggable {
+  width: 500px;
+  height: 280px;
   position: absolute;
   background: #fff;
-  padding: 10px;
-  top: 50%;
+  padding: 24px;
+  top: 27%;
   left: 50%;
   margin: -140px 0 0 -250px;
   box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px;
 
-  iframe { z-index: -1; }
+  &:hover {
+    cursor: move;
+    cursor: -webkit-grab;
+    cursor: grab;
+  }
+
+  &:active {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+  }
   
   &.is-pointer-down {
     background: #09F;
@@ -24,14 +35,20 @@ html, body { background: #f0f0f0; }
 }
 
 .draggable__close {
-  width: 34px;
-  height: 34px;
+  width: 24px;
+  height: 24px;
   background: #fff;
   display: block;
   position: absolute;
   top: 0;
   right: 0;
-  transition: background 0.2s; 
   z-index: 10;
-  &:hover { background: #333; }
+  text-align: center;
+  line-height: 31px;
+  i { 
+    font-size: 20px; 
+    color: #333;
+    transition: color 0.2s; 
+  }
+  &:hover i { color: #d44950; }
 }
